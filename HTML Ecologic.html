@@ -1,0 +1,407 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nome do Evento</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,500;0,700;1,800&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --green-light: #2a8bd3;
+    --green-main: #115d96;
+    --green-dark: #053e68;
+
+    --bg-body: #ffffff;
+    --bg-alt: #f3f7f4;
+
+    --text-body: #444;
+
+    --gradient-main: linear-gradient(90deg, var(--green-light), var(--green-dark));
+
+    --radius: 20px;
+    --shadow-soft: 0 10px 35px rgba(12,65,31,0.12);
+
+    --font-display: 'Kanit', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg-body);
+    color: var(--text-body);
+    line-height: 1.6;
+}
+
+img { width: 100%; display: block; }
+
+section { padding: 5rem 0; }
+
+.main-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+}
+
+
+
+
+/* NAV */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-style: italic;
+    background: var(--gradient-main);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;      /* centraliza horizontalmente os links */
+        text-align: center;       /* centraliza o texto dos links */
+}
+
+nav a {
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--green-dark);
+}
+
+nav a:hover { color: var(--green-main); }
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* TITULOS */
+.section-title {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 800;
+    font-style: italic;
+    text-align: center;
+    color: var(--green-main);
+    margin-bottom: 3rem;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 5px;
+    background: var(--gradient-main);
+    margin: 12px auto 0;
+    border-radius: 5px;
+}
+
+/* INSCRIÇÕES */
+.pricing-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.pricing-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}
+
+.pricing-row h3 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    color: var(--green-main);
+}
+
+.pricing-row span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--green-main);
+}
+
+.pricing-row strong {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+}
+
+.pricing-row.highlight {
+    border-left: 6px solid var(--green-main);
+}
+
+/* BOTÃO */
+.btn-cta {
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: 2px solid var(--green-main);
+    background: #fff;
+    color: var(--green-main);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-cta:hover {
+    background: var(--green-main);
+    color: #fff;
+}
+
+/* INFORMAÇÕES */
+.bg-alt { background: var(--bg-alt); }
+
+.timeline {
+    max-width: 700px;
+    margin: auto;
+    border-left: 4px solid var(--green-main);
+    padding-left: 2rem;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+}
+
+.timeline-item span {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    font-size: 1rem; /* antes 0.85rem */
+    color: var(--green-main);
+    font-weight: 600; /* opcional, deixa mais destacado */
+}
+
+.timeline-item p {
+    font-size: 1.2rem; /* antes 1.1rem */
+    line-height: 1.5; /* mais espaçamento, melhora leitura */
+}
+
+/* KIT */
+.kit-box {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 3rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+}
+
+.kit-box h3 {
+    font-family: var(--font-display);
+    color: var(--green-main);
+    margin-bottom: 1.5rem;
+}
+
+.obs-box {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: #eef5f1;
+    border-left: 5px solid var(--green-main);
+    border-radius: var(--radius);
+}
+
+/* CONTATO */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.link-card {
+    background: #fff;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--green-main);
+    border: 2px solid var(--green-main);
+}
+
+.link-card:hover {
+    background: var(--green-main);
+    color: #fff;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .pricing-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 1rem 0;
+    }
+
+    nav ul.active { display: flex; }
+
+    .hamburger { display: block; }
+
+     .contact-links {
+        flex-direction: column;       /* coloca os botões em coluna, se quiser */
+        align-items: center;          /* centraliza os botões horizontalmente */
+        text-align: center;           /* centraliza o texto dentro dos botões */
+        gap: 1rem;                    /* espaçamento entre os botões */
+    }
+
+    .link-card {
+        display: inline-flex;         /* flex para centralizar o texto */
+        justify-content: center;      /* centraliza horizontalmente */
+        align-items: center;          /* centraliza verticalmente */
+        text-align: center;           /* garante centralização do texto */
+        width: auto;                  /* mantém tamanho automático, mas centralizado */
+    }
+}
+
+</style>
+
+
+
+
+<header class="hero">
+<img src="" alt="">
+</header>
+
+<nav>
+<div class="nav-container">
+<div class="nav-logo">Nome do Evento</div>
+<button class="hamburger" onclick="toggleMenu()">=</button>
+<ul id="menu-list">
+<li><a href="#inscricoes" onclick="toggleMenu()">Inscrições</a></li>
+<li><a href="#informacoes" onclick="toggleMenu()">Informações</a></li>
+<li><a href="#kits" onclick="toggleMenu()">Kit e Retirada</a></li>
+<li><a href="#contato" onclick="toggleMenu()">Regulamento</a></li>
+</ul>
+</div>
+</nav>
+
+<div class="main-container">
+<section id="inscricoes">
+<h2 class="section-title">Inscrições</h2>
+
+<div class="pricing-list">
+<div class="pricing-row">
+<div>
+<h3>Kit 1</h3>
+<span>Descrição</span></div>
+<strong>R$ 99,90</strong>
+<a href="" class="btn-cta">AGUARDE</a>
+</div>
+
+<div class="pricing-row">
+<div>
+<h3>Kit 2</h3>
+<span>Descrição</span></div>
+<strong>R$ 79,90</strong>
+<a href="" class="btn-cta">AGUARDE</a>
+</div>
+</div>
+</section>
+</div>
+
+<div class="bg-alt">
+<div class="main-container">
+<section id="informacoes">
+<h2 class="section-title">Informações Gerais</h2>
+
+<div class="timeline">
+<div class="timeline-item">
+<span>Data:</span>
+<p>Informar a data</p>
+</div>
+<div class="timeline-item">
+<span>Local:</span>
+<p>Informar o local</p>
+</div>
+<div class="timeline-item">
+<span>Horário:</span>
+<p>Informar o horário</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+
+<div class="main-container">
+<section id="kits">
+<h2 class="section-title">Kit e Retirada</h2>
+
+<div class="kit-box">
+<h3>Entrega do Kit</h3>
+<ul>
+<li><strong>Data:</strong> Informar a data</li>
+<li><strong>Local:</strong> Informar o local</li>
+<li><strong>Horário:</strong> Informar o horário</li>
+</ul>
+
+<div class="obs-box">
+<strong>Entrega no dia do evento:</strong><br>
+Informações sobre a entrega no dia do evento.
+</div>
+</div>
+</section>
+
+<section id="contato">
+<h2 class="section-title">Regulamento e Fale Conosco</h2>
+<div class="contact-links">
+<a href="" target="_blank" class="link-card">Disponível em Breve</a>
+<a href="" target="_blank" class="link-card">Disponível em Breve</a>
+</div>
+</section>
+</div>
+
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu-list").classList.toggle("active");
+}
+</script>
